@@ -1,7 +1,7 @@
 Vagrant::Config.run do |config|
   config.vm.box = "lucid32"
   config.vm.network "33.33.33.10"
-  config.vm.share_folder("web-folder", "/var/www", "/Users/nickshepherd/Sites/cogsworth")
+  config.vm.share_folder("web-folder", "/var/www", "/Users/nickshepherd/Sites/cogsworth-kohana", :nfs => true)
 
   config.vm.provision :chef_solo do |chef|
     chef.cookbooks_path = "cookbooks"
